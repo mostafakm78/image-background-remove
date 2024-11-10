@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Image Effect</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="image-box">
+            <img src="./f30ee03d6ab77e0dc1b27eb6ee284fb0-removebg-preview.png" width="100%">
+
+            <div class="image-wrap">
+                <img src="./f30ee03d6ab77e0dc1b27eb6ee284fb0.jpg" id="originalImg" width="100%">
+            </div>
+
+            <span id="Line">
+                <img src="./arrow.png" class="arrow">
+            </span>
+
+        </div>
+    </div>
+
+    <script>
+
+        const imgaeBox = document.querySelector('.image-box')
+        const imageWrap = document.querySelector('.image-wrap')
+        const Imgorg = document.querySelector('#originalImg')
+        const Line = document.querySelector('#Line')
+
+        Imgorg.style.width = imgaeBox.offsetWidth + 'px'
+        let leftSpace = imgaeBox.offsetLeft
+
+
+        imgaeBox.onmousemove = function (e) {
+            let boxWidth = (e.pageX -  leftSpace) + 'px'
+            imageWrap.style.width = boxWidth
+            Line.style.left = boxWidth
+        }
+    </script>
+</body>
+</html>
